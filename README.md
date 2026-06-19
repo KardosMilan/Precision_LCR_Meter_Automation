@@ -8,6 +8,8 @@
 
 LCR Control Tool is a standalone Windows application built around PyVISA that automates the workflow of precision impedance measurements. It connects to any VISA-compatible LCR meter, controls measurement parameters, logs results in multiple output formats, evaluates measurements against configurable pass/fail limits, and generates publication-ready plots from the collected data — all within a single desktop interface.
 
+The LCR Control tool was compared to the Vector Network Analyzer on the overlapping frequency range in the case of inductor characterization. It has been concluded that on the LCR Meter frequency range, it provides the same or better results as VNA.
+
 The application went through eight development iterations (v1 through v8), with the full version history preserved in the repository.
 
 ---
@@ -55,11 +57,17 @@ The GUI is organised as a three-tab `ttk.Notebook`:
 ### Manual Measurement Tab
 Single-point measurements triggered manually. Each trigger queries the instrument for the current frequency and impedance values, appends a new indexed row to the log file, and updates the live console. Supports resuming an existing log file by name — new measurements continue the index sequence without overwriting prior data.
 
+![Manual Measurement Tab](02_Pictures/GUI_11.png)
+
 ### Sweep Measurement Tab
 Fully automated frequency sweep sequences. The module programs the instrument's frequency list, acquires measurements at each point, and writes the complete sweep to the selected output file. Progress is shown in the GUI during acquisition.
 
+![Sweep Measurement Tab](02_Pictures/GUI_5.png)
+
 ### Plot Generation Tab
 Standalone plot module that reads previously saved measurement files (any supported format) and renders matplotlib figures. Supports custom axis range overrides and automatic format detection between EN/HU CSV variants.
+
+![Manual Plot Generation Tab](02_Pictures/GUI_13.png)
 
 ---
 
