@@ -1,0 +1,9 @@
+pyinstaller --onefile --add-data "icons;icons" --noconsole --icon=LCR.ico LCR_control_tool.py
+
+pyinstaller --onedir --noconsole --icon=LCR.ico --add-data "icons;icons" LCR_Control_v4.py
+
+python -m nuitka --onefile --standalone --windows-disable-console --windows-icon-from-ico=LCR.ico --enable-plugin=tk-inter --enable-plugin=numpy --nofollow-import-to=matplotlib.tests --nofollow-import-to=scipy.tests --include-package=skrf --include-data-dir=icons=icons LCR_Control_v4.py
+
+python -m nuitka --onefile --standalone --windows-disable-console --windows-icon-from-ico=LCR.ico --enable-plugin=tk-inter --enable-plugin=numpy --nofollow-import-to=matplotlib.tests --nofollow-import-to=scipy.tests --include-package=skrf --include-data-dir=icons=icons LCR_control_tool.py
+
+pyinstaller --onedir --noconsole --icon=LCR.ico --add-data "icons;icons" --collect-all pyvisa --collect-all pyvisa_py --collect-all matplotlib --collect-all skrf --hidden-import=pyvisa --hidden-import=pyvisa_py --hidden-import=matplotlib --hidden-import=skrf LCR_Control_v7.py
