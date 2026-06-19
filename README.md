@@ -69,6 +69,8 @@ Standalone plot module that reads previously saved measurement files (any suppor
 
 ![Manual Plot Generation Tab](02_Pictures/GUI_13.png)
 
+![Data postprocess](02_Pictures/Data_postprocess2.png)
+
 ---
 
 ## Measurement Modes Supported
